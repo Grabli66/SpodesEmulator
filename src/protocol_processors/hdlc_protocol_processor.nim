@@ -1,6 +1,5 @@
 import asyncdispatch
 import std/strformat
-import print
 import ../ireader
 import ../iprotocol_processor as ipp
 
@@ -51,7 +50,6 @@ proc extractHdlcFrame(reader:IReader) : Future[HdlcFrame] {.async.} =
 proc processProtocol(reader:IReader) {.async.} =
     while true:
         let frame = await extractHdlcFrame(reader)
-        print frame
 
 # Возвращает обработчик протокола HDLC
 proc newHdlcProtocolProcessor*():IProtocolProcessor =

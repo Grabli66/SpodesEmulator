@@ -12,4 +12,3 @@ bin           = @["spodesemulator"]
 # Dependencies
 
 requires "nim >= 2.2.0"
-requires "print"
